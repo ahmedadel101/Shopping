@@ -1,7 +1,7 @@
-export interface users {
+export interface Users {
     email?: string,
     name?: string,
-    adress?: string,
-    password?: string,
+    address?: string,
+    pass?: string,
     
 }

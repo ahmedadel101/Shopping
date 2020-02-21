@@ -64,11 +64,11 @@
 
             <!-- Adress Input  -->
             <section class="form-group">
-                <input ngModel #adress="ngModel" name="adress" 
+                <input ngModel #address="ngModel" name="address" 
                 type="text" class="form-control" id="exampleFormControlInput1" 
-                placeholder="Adress" required>
-                <section class="alert alert-danger" *ngIf="adress.touched && ! adress.valid"> 
-                    <section *ngIf="adress.errors?.required">
+                placeholder="Address" required>
+                <section class="alert alert-danger" *ngIf="address.touched && ! address.valid"> 
+                    <section *ngIf="address.errors?.required">
                     Adress is required</section>
                     </section>
             </section>
@@ -80,5 +80,7 @@
                     
                    
         </form>
+        <section class="alert alert-danger w-50 mt-5" role="alert" *ngIf="errMsg">{{errMsg}}</section>
     </section>
+    
 </section>

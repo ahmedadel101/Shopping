@@ -1,0 +1,40 @@
+<section class="body w-100">
+        <section class="container w-75 m-auto">
+            <form #f="ngForm" (ngSubmit)="login(f)" >
+            
+                <!-- Email Input  -->
+                <section class="form-group w-50">
+                        <input ngModel #email="ngModel" name="email" 
+                        type="email" class="form-control" id="exampleFormControlInput1" 
+                        placeholder="Your mail" pattern="^\w+[-_.]{0,1}\w+@[a-z0-9]+(\.[a-z]{2,6}){1,3}$" required>
+                        <section class="alert alert-danger" *ngIf="email.touched && ! email.valid"> 
+                            <section *ngIf="email.errors?.required">
+                            Email is required</section>
+                            <section *ngIf="email.errors?.pattern">
+                            Your input doesn't match email format
+                            </section>
+                        </section>
+                    </section>
+
+
+                    <!-- Pass Input  -->
+                    <section class="form-group w-50">
+                        <input ngModel #pass="ngModel" name="pass" 
+                        type="password" class="form-control" id="exampleFormControlInput1" 
+                        placeholder="password" minlength="6" required>
+                        <section class="alert alert-danger" *ngIf="pass.touched && ! pass.valid"> 
+                            <section *ngIf="pass.errors?.required">
+                            Password is required</section>
+                            <section *ngIf="pass.errors?.pattern">
+                            Your input doesn't match Password format
+                            </section>
+                        </section>
+                    </section>
+
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Login </button>
+
+            </form>
+        </section>
+
+</section>
+

@@ -1,0 +1,84 @@
+<section class="body">
+    <section class="container">
+        <h1 class="w-25 m-auto" > Sign Up </h1>
+        <form #f="ngForm" (ngSubmit)="signUp(f)" >
+
+            <!-- Name Input  -->
+            <section class="form-group">
+                <input ngModel #name="ngModel" name="yName" 
+                type="text" class="form-control" id="exampleFormControlInput1" 
+                placeholder="Your Name" pattern="^[A-Za-z]{3,15}$" required>
+
+                <section class="alert alert-danger" *ngIf="name.touched && !name.valid" >
+                    <section *ngIf="name.errors?.required">
+                    Name is required</section>
+                    <section *ngIf="name.errors?.pattern">
+                    Name is invalid</section>
+                </section>
+            </section>
+
+
+            <!-- Email Input  -->
+            <section class="form-group">
+                <input ngModel #email="ngModel" name="email" 
+                type="email" class="form-control" id="exampleFormControlInput1" 
+                placeholder="Your mail" pattern="^\w+[-_.]{0,1}\w+@[a-z0-9]+(\.[a-z]{2,6}){1,3}$" required>
+                <section class="alert alert-danger" *ngIf="email.touched && ! email.valid"> 
+                    <section *ngIf="email.errors?.required">
+                    Email is required</section>
+                    <section *ngIf="email.errors?.pattern">
+                    Your input doesn't match email format
+                    </section>
+                </section>
+            </section>
+
+
+            <!-- Pass Input  -->
+            <section class="form-group">
+                <input ngModel #pass="ngModel" name="pass" 
+                type="password" class="form-control" id="exampleFormControlInput1" 
+                placeholder="password" minlength="6" required>
+                <section class="alert alert-danger" *ngIf="pass.touched && ! pass.valid"> 
+                    <section *ngIf="pass.errors?.required">
+                    Password is required</section>
+                    <section *ngIf="pass.errors?.pattern">
+                    Your input doesn't match Password format
+                    </section>
+                </section>
+            </section>
+
+
+            <!-- Confirm pass Input  -->
+            <section class="form-group">
+                <input ngModel #passCon="ngModel" name="passCon" 
+                type="password" class="form-control" id="exampleFormControlInput1" 
+                placeholder="Confirm password" required>
+                <section class="alert alert-danger" *ngIf="passCon.touched && ! passCon.valid">     
+                    Password is required
+                </section>
+                <section class="alert alert-danger" *ngIf="passCon.value !== pass.value">     
+                        Your Password doesn't match  
+                </section>
+            </section>
+
+
+            <!-- Adress Input  -->
+            <section class="form-group">
+                <input ngModel #adress="ngModel" name="adress" 
+                type="text" class="form-control" id="exampleFormControlInput1" 
+                placeholder="Adress" required>
+                <section class="alert alert-danger" *ngIf="adress.touched && ! adress.valid"> 
+                    <section *ngIf="adress.errors?.required">
+                    Adress is required</section>
+                    </section>
+            </section>
+
+             <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" [disabled]="f.invalid || passCon.value !== pass.value"> Create Account </button>
+
+                   
+                    
+                   
+        </form>
+    </section>
+</section>

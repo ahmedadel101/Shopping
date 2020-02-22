@@ -5,11 +5,11 @@
 
             <!-- Name Input  -->
             <section class="form-group">
-                <input ngModel #name="ngModel" name="yName" 
+                <input ngModel #name="ngModel" name="name" 
                 type="text" class="form-control" id="exampleFormControlInput1" 
-                placeholder="Your Name" pattern="^[A-Za-z]{3,15}$" required>
+                placeholder="Your Name"  required>
 
-                <section class="alert alert-danger" *ngIf="name.touched && !name.valid" >
+                <section class="alert alert-danger" *ngIf="name.touched && name.invalid" >
                     <section *ngIf="name.errors?.required">
                     Name is required</section>
                     <section *ngIf="name.errors?.pattern">

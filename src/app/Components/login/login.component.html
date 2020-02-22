@@ -34,6 +34,7 @@
                     <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Login </button>
 
             </form>
+            <div class="alert alert-danger mt-5 w-50" role="alert" *ngIf="errMsg">{{errMsg}}</div>
         </section>
 
 </section>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/Services/cart.service';
+import { Shopping } from 'src/app/interface/shopping.interface';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cart: Shopping[]= [];
+
+  constructor(private cartS:CartService) { }
 
   ngOnInit(): void {
+    this.cartS.getCarts().subscribe(cart => {
+      this.cart = cart.map(Shop => {
+        return{
+          id: Shop.payload.doc.id,
+          photoUrl: Shop.payload.doc.data()['photoUrl'],
+          name: Shop.payload.doc.data()['name'],
+          amount: Shop.payload.doc.data()['amount'],
+          price: Shop.payload.doc.data()['price']
+        }
+      })
+      console.log(this.cart)
+    })
   }
 
 }

@@ -28,4 +28,13 @@ export class CartComponent implements OnInit {
     })
   }
 
+  delete(index){
+    this.cartS.delete(this.cart[index].id)
+  }
+  
+  save(index){
+
+    this.cartS.save(this.cart[index].id, this.cart[index].amount)
+  }
+
 }

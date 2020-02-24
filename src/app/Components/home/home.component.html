@@ -2,8 +2,8 @@
     <section class="container w-75 m-auto">
         <section class="row">
             <section class="col-md-6 col-sm-12" *ngFor=" let good of goods; index as i">
-                <section class="card w-75 mb-3 text-left" >
-                    <img class="card-img-top img-fluid" [src]="good.photoUrl" alt="">
+                <section class="card w-75 mb-3 text-center" >
+                    <img class="card-img-top m-auto img-fluid" [src]="good.photoUrl" alt="">
                     <section class="card-body">
                         <!-- Good Name  -->
                         <h4 class="card-title">{{good.name | titlecase}}</h4>
@@ -14,9 +14,10 @@
                         (click)="AddToCart(i)" *ngIf="add !== i">Add To Cart</button>
                         <!-- From Here You Can Select How Many Piece You want -->
                         <section *ngIf="add === i" class="">
-                            <input  class="form-control w-50 mt-3" 
+                            <input  class="form-control m-auto w-50 mt-3" 
                             type="number" placeholder="Amount(piece)" #amount>
-                            <button class="btn btn-primary mt-2" (click)="buy(amount.value)"> Buy </button>
+                            <button class="btn btn-primary mt-2" 
+                            routerLink="/Cart" (click)="buy(amount.value)"> Buy </button>
                         </section>
                     </section>
                 </section>

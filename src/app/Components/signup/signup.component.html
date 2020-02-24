@@ -1,8 +1,8 @@
 <section class="body">
-    <section class="container">
-        <h1 class="w-25 m-auto" > Sign Up </h1>
-        <form #f="ngForm" (ngSubmit)="signUp(f)" >
-
+    <section class="container text-center ">
+        
+        <form #f="ngForm" (ngSubmit)="signUp(f)" class="w-75 m-auto text-center" >
+                <h1 class="p-5" > Sign Up </h1>
             <!-- Name Input  -->
             <section class="form-group">
                 <input ngModel #name="ngModel" name="name" 
@@ -74,9 +74,9 @@
             </section>
 
              <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary" [disabled]="f.invalid || passCon.value !== pass.value"> Create Account </button>
+            <button type="submit" class="btn btn-primary w-25 mr-3 p-3" [disabled]="f.invalid || passCon.value !== pass.value"> Create Account </button>
 
-                   
+            <button type="button" class="btn btn-success w-25 p-3" routerLink="/Login"> Login Now </button>       
                     
                    
         </form>

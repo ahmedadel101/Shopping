@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Goods } from '../interface/Goods.interface';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
-import { $, $$ } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +16,15 @@ export class CartService {
 
   getCarts(){
     return this.fireS.collection(`users/${this.authS.userId}/cart`).snapshotChanges();
+  }
+
+  delete(id){
+    return this.fireS.doc(`users/${this.authS.userId}/cart/${id}`).delete()
+  }
+
+  save(id, amount){
+    return this.fireS.doc(`users/${this.authS.userId}/cart/${id}`).update({
+      amount
+    })
   }
 }

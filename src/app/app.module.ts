@@ -4,6 +4,7 @@ import{ FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,8 +16,8 @@ import { GoodsComponent } from './Components/goods/goods.component';
 import { HomeComponent } from './Components/home/home.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { AccountComponent } from './Components/account/account.component';
-import { ShoppingComponent } from './Components/shopping/shopping.component';
 import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -29,8 +30,8 @@ import { NotfoundComponent } from './Components/notfound/notfound.component';
     HomeComponent,
     CartComponent,
     AccountComponent,
-    ShoppingComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +48,7 @@ import { NotfoundComponent } from './Components/notfound/notfound.component';
       measurementId: "G-S6DKJ9DZ1Q"}) ,
       AngularFirestoreModule,
       AngularFireAuthModule,
+      AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

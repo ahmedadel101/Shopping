@@ -1,0 +1,47 @@
+
+<section class="container-fluid">
+    <section class="container mt-5">
+        <form #f="ngForm" (ngSubmit)="addNewGood(f)">
+            <section class="form-row">
+
+                <!-- Add Image Input -->
+                <section class="col-sm-12 imgAdd">
+                    <div class="form-group text-center">
+                        <label for="photoUrl">
+                            <img class="img-fluid"  src=".//.//assets/avatar.png" alt="">
+                            <h3>Add Photo</h3>
+                        </label>
+                        <input ngModel type="file" 
+                            class="form-control disInput" name="image" id="photoUrl" 
+                             placeholder="" #image required>
+                    </div>
+                </section>
+                <!-- End Add Image Input -->
+
+                <!-- Add Name Input -->
+                <section class="col-sm-8 m-auto">
+                    <div class="form-group">
+                    <input ngModel type="text"
+                        class="form-control" name="name" id=""  placeholder="Name" required>
+                    </div>
+                </section>
+                <!-- End Add Name Input -->
+
+                <!-- Add Price Input -->
+                <section class="col-sm-8 m-auto">
+                    <div class="form-group">
+                    <input ngModel type="text"
+                        class="form-control" name="price" id=""  placeholder="Price" required>
+                    </div>
+                </section>
+                <!-- End Add Price Input  -->
+
+                <!-- Submit   -->
+                <section class="col-sm-6 m-auto">
+                    <button type="submit" class="btn btn-primary w-100 p-3"
+                    [disabled]="f.invalid">Add Good</button>
+                </section>
+            </section>
+        </form>
+    </section>
+</section>

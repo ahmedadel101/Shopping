@@ -1,9 +1,8 @@
 <section class="body w-100">
         <section class="container w-75 m-auto">
-            <form #f="ngForm" (ngSubmit)="login(f)" >
-            
+            <form #f="ngForm" (ngSubmit)="login(f)" class="w-75 m-auto text-center" >
                 <!-- Email Input  -->
-                <section class="form-group w-50">
+                <section class="form-group">
                         <input ngModel #email="ngModel" name="email" 
                         type="email" class="form-control" id="exampleFormControlInput1" 
                         placeholder="Your mail" pattern="^\w+[-_.]{0,1}\w+@[a-z0-9]+(\.[a-z]{2,6}){1,3}$" required>
@@ -18,23 +17,26 @@
 
 
                     <!-- Pass Input  -->
-                    <section class="form-group w-50">
+                    <section class="form-group">
                         <input ngModel #pass="ngModel" name="pass" 
                         type="password" class="form-control" id="exampleFormControlInput1" 
                         placeholder="password" minlength="6" required>
                         <section class="alert alert-danger" *ngIf="pass.touched && ! pass.valid"> 
                             <section *ngIf="pass.errors?.required">
-                            Password is required</section>
+                             Password is required</section>
                             <section *ngIf="pass.errors?.pattern">
                             Your input doesn't match Password format
                             </section>
-                        </section>
                     </section>
+                </section>
 
-                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Login </button>
+                <button type="submit" class="btn btn-primary w-25 mr-3 p-2 " [disabled]="f.invalid"> Login </button>
+                <button type="submit" class="btn btn-success w-25 p-2 " routerLink="/Signup" > Create New Account </button>
 
+                <div class="alert alert-danger mt-5 w-50" role="alert" *ngIf="errMsg">{{errMsg}}</div>
             </form>
-            <div class="alert alert-danger mt-5 w-50" role="alert" *ngIf="errMsg">{{errMsg}}</div>
+            
+           
         </section>
 
 </section>

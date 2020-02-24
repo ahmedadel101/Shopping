@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   login(form){
     let data : Users = form.value
     this.authS.login(data.email, data.pass)
-    .then(() => this.route.navigate(['/']) )
+    .then(() => this.route.navigate(['""']))
     .catch(err => {
       this.errMsg = err.message;
     })

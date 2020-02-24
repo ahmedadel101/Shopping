@@ -13,14 +13,14 @@ import { UserGuard } from './Services/guards/user.guard';
 
 
 const routes: Routes = [
-  {path:"", component: HomeComponent},
-  {path:"Home", component: HomeComponent},
-  {path:"Login", component: LoginComponent, canActivate: [UserGuard]},
-  {path:"Signup", component: SignupComponent, canActivate: [UserGuard]},
+  {path:"", component: HomeComponent, data: {index: 0}},
+  {path:"Home", component: HomeComponent, data: {index: 0},},
+  {path:"Login", component: LoginComponent, data: {index: 2}, canActivate: [UserGuard]},
+  {path:"Signup", component: SignupComponent, data: {index: 4}, canActivate: [UserGuard]},
   {path:"Goods", component: GoodsComponent, canActivate: [AuthGuard]},
-  {path:"Cart", component: CartComponent, canActivate: [AuthGuard]},
+  {path:"Cart", component: CartComponent, data: {index: 1}, canActivate: [AuthGuard]},
   {path:"Account", component: AccountComponent},
-  {path:"Dash", component: DashboardComponent, canActivate: [AuthGuard]},
+  {path:"Dash", component: DashboardComponent, data: {index: 3}, canActivate: [AuthGuard]},
   {path:"**", component: NotfoundComponent}
 
 

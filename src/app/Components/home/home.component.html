@@ -2,7 +2,7 @@
     <section class="container w-75 m-auto">
         <section class="row">
             <section class="col-md-6 col-sm-12" *ngFor=" let good of goods; index as i">
-                <section class="card w-75 mb-3 text-center" >
+                <section class="card w-100 mb-3 text-center" >
                     <img class="card-img-top m-auto img-fluid" [src]="good.photoUrl" alt="">
                     <section class="card-body">
                         <!-- Good Name  -->
@@ -14,9 +14,9 @@
                         (click)="AddToCart(i)" *ngIf="add !== i">Add To Cart</button>
                         <!-- From Here You Can Select How Many Piece You want -->
                         <section *ngIf="add === i" class="">
-                            <input  class="form-control m-auto w-50 mt-3" 
-                            type="number" placeholder="Amount(piece)" #amount>
-                            <button class="btn btn-primary mt-2" 
+                            <input  class="form-control m-auto  mt-3" 
+                            type="number" placeholder="piece" #amount>
+                            <button class="btn btn-primary w-75 mt-2" 
                             routerLink="/Cart" (click)="buy(amount.value)"> Buy </button>
                         </section>
                     </section>

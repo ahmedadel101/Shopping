@@ -5,4 +5,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    input {
+        width: 80%;
+        margin: auto;
+    }
+    .btn{
+        width: 200px;
+    }
+}
+@media only screen and(max-width: 400px ){
+    .container
+{
+   
+    input {
+        width: 100%;
+       
+    }
+    
+}
 }
